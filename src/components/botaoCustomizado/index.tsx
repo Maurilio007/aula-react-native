@@ -1,8 +1,15 @@
-import { Button } from "react-native";
+import { 
+    Button,
+    ButtonProps
+} from "react-native";
 
-export function botaoCustomizado ()  {
+export function BotaoCustomizado (
+    {...rest}: ButtonProps
+)  {
     return (
-        <Button title='' />
+        <Button 
+        {...rest}
+        />
     )
 
 }

@@ -1,9 +1,13 @@
+import { BotaoCustomizado } from "@/components/botaoCustomizado";
+import { InputCustomizado, } from "@/components/inputCustomizado";
 import { Text, View } from "react-native";
 
-export  function LoginScreen() {
+export function LoginScreen() {
     return (
-        <View className= "flex-1 items-center justify-center bg-red-500">
-            <Text className="text-6xl font-bold">Tela de login</Text>
+        <View className= "flex-1 items-center justify-center bg-gray-50">
+            <InputCustomizado placeholder="Login" />
+            <InputCustomizado placeholder="Senha" />
+            <BotaoCustomizado title='Entrar' />
         </View>
     )
 }

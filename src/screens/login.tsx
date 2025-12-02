@@ -1,17 +1,35 @@
 import { BotaoCustomizado } from '@/components/botaoCustomizado';
 import { InputCustomizado } from '@/components/inputCustomizado';
+import { useState } from 'react';
 import { Text, View } from 'react-native';
 
 export function LoginScreen() {
+  const [login, setLogin, ] = useState('');
+  const [Senha, setSenha, ] = useState('');
+
   return (
     <View className="flex-1 items-center justify-center bg-gray-50">
-      <View className="w-full p-5 gap-5 justify-center items-center">
+      <View className="w-full items-center justify-center gap-5 p-5">
         <Text className="text-3xl">Nosso app</Text>
-        <InputCustomizado placeholder="Login" />
-        <InputCustomizado placeholder="Senha" />
-        <BotaoCustomizado title="Entrar" />
+
+        <InputCustomizado
+          placeholder="Login"
+          onChangeText={(text) => {
+            setLogin(text);
+          }}
+        />
+        <InputCustomizado
+         placeholder="Senha"
+         secureTextEntry={true}
+         onChangeText={(text) => {
+          setSenha(text);
+        }}
+        />
+        <BotaoCustomizado title="Entrar"
+        onPress={() => console.log("login", login, "Senha", Senha)} />
         <Text className="text-blue-400"> Esqueceu a Senha?</Text>
       </View>
     </View>
   );
 }
+
